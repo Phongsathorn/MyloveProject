@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+        <!-- Twitter meta-->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:site" content="@pratikborsadiya">
+        <meta property="twitter:creator" content="@pratikborsadiya">
+        <!-- Open Graph Meta-->
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Vali Admin">
+        <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
+        <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+        <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+        <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Main CSS-->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!-- Font-icon css-->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        
+                
+        <title>DATAUSER</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        
+    </head>
+    <body>
+    <div class="app-title">
+         <header class="app-header">
+            <a href="/main" class="app-header__logo" >ICTSTORE</a>
+            <!-- main.css-->
+            <ul class="app-nav">
+                <li class="app-search">
+                <input class="app-search__input" type="search" placeholder="Search">
+                <button class="app-search__button"><i class="fa fa-search"></i></button>
+                </li>
+        
+                <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+                <aside class="app-sidebar">
+                <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+
+        
+                <ul class="app-menu">
+                 <li>
+                    <div>
+                        <label for="">ระดับการศึกษา</label>
+                        <select name="" id="" class="form-control ">
+                        <option value="Bachelor’s">ปริญญาตรี</option>
+                        <option value="PhD&Master's">ปริญญาเอก โท</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="">ประเภท</label>
+                        <select name="" id="" class="form-control">
+                        <option value="">ทั้งหมด</option>
+                        <option value=""></option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="">หมวดหมู่</label>
+                        <select name="" id="" class="form-control">
+                        <option value="">ทั้งหมด</option>
+                        <option value=""></option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="">ชนิดเอกสาร</label>
+                        <select name="" id="" class="form-control">
+                        <option value="">ทั้งหมด</option>
+                        <option value=""></option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="">สาขาวิชา</label>
+                        <select name="" id="" class="form-control">
+                        <option value="">ทั้งหมด</option>
+                        <option value=""></option>
+                        </select>
+                    </div>
+                </li>
+                <style>
+                    hr {
+                        display: block;
+                        unicode-bidi: isolate;
+                        margin-inline-start: auto;
+                        margin-inline-end: auto;
+                        overflow: hidden;
+                        border-style: inset;
+                        border-width: 2px;
+                        }
+                </style>
+                <p><hr></p>
+        
+                <div class="layoutlogre">
+                @if (Route::has('login'))
+                    <div class="top-right links front">
+                        @auth
+                            <a href="{{ url('/home') }}" >ICTSTORE</a>
+                        @else
+                        
+                            <a href="{{ route('login') }}" class="log">เข้าสู่ระบบ</a><br>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="re">สมัครสมาชิก</a><br>
+                            @endif
+                            
+                        @endauth
+                        <a href="{{ url('/data') }}" class="view">ดูรายละเอียดผู้ใช้</a><br>
+                    </div>
+                @endif
+                </div>
+                </ul>
+                </li>
+                </aside>
+        </header></div>
+        <main class="app-content">
+            <div class="app-title">
+                <div>
+                <h1><i class="fa fa-th-list"></i> Data User</h1>
+                
+                </div>
+                <ul class="app-breadcrumb breadcrumb side">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Tables</li>
+                <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <div class="tile">
+                    <div class="tile-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                        <thead>
+                            <tr>
+                                <th>ลำดับที่</th>
+                                <th>ชื่อนามสุกล</th>
+                                <th>เพศ</th>
+                                <th>จังหวัด</th>
+                                <th>อีเมล</th>
+                                <th>ชื่อผู้ใช้</th>
+                                <th>รหัสผ่าน</th>
+                                <th>วันเดือนปี</th>
+                                <th>จัดการ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ใส่คำสั่ง @foreach -->
+                            <tr>
+                                <!-- $ชื่อ table -> ชื่อ คอลัม -->
+                                <td>{{$loop->intertion}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>{{1}}</td>
+                                <td>1</td>
+                               
+                            </tr>
+                            <!-- @endforeach -->
+                        </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <!-- The javascript plugin to display page loading on top-->
+        <script src="js/plugins/pace.min.js"></script>
+        <!-- Page specific javascripts-->
+        <script type="text/javascript" src="js/plugins/chart.js"></script>
+        
+    </body>
+</html>
